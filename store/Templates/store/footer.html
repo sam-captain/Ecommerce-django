@@ -1,0 +1,48 @@
+{% load static %}
+{% block 'css'%}
+<link rel="stylesheet" href="{% static 'css/main.css'%}">
+{% endblock 'css'%}
+{% block 'content'%}
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download my app</h3>
+                <p>Download this app for android and
+                 ios mobile phone</p> 
+                 <div class="app-logo">
+                     <img src="{% static 'images/play-store.png' %}">
+                     <img src="{% static 'images/app-store.png' %}">
+                 </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="{% static 'images/logo-white.png' %}">
+                <p>Download this app for android and ios mobile phone</p> 
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful links</h3>
+                <ul>
+                    <li>coupons</li>
+                    <li>Blog post</li>
+                    <li>Return policy</li>
+                    <li>Join affliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>FOLLOW ME</h3>
+                <ul>
+                    <li>facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Whatsapp</li>
+                    <li>Youtube</li>
+                </ul> 
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">copyright 2020- Samkent</p>
+    </div>
+</div>
+{% endblock 'content'%}
+
+

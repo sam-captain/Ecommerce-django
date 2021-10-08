@@ -1,0 +1,76 @@
+{% load static %}
+{% block 'content' %}
+<div id="sidebar">
+     <div class="sidebar-header">
+        <h1><img src="{% static 'images/user.png'%}" class="m-5"></h1>
+    </div>
+
+    <ul class="list-unstyled components">
+
+        <li>
+            <a href="{% url 'dashboard' %}">
+               <i class="fa fa-tachometer mr-3"></i>
+               Dashboard</a>
+       </li>
+
+       <li>
+           <a href="{% url 'categories' %}">
+               <i class="fa fa-tags mr-3"></i> 
+               Categories</a>
+       </li>
+
+       <li>
+           <a href="#">
+               <i class="fa fa-file-o mr-3"></i>
+               Sellers</a>
+       </li>
+
+       <li>
+           <a href="{% url 'customers' %}">
+               <i class="fa fa-comments mr-3"></i>
+               Customers</a>
+       </li>
+       <li>
+           <a href="{% url 'product' %}">
+               <i class="fa fa-file-o mr-3"></i>
+               Products</a>
+       </li>
+
+       <li>
+           <a href="#">
+               <i class="fa fa-comments mr-3"></i>
+               orders</a>
+       </li>
+        <li>
+             <a href="#">
+                <i class="fa fa-tachometer mr-3"></i>
+                Payments</a>
+        </li>
+
+        <li>
+            <a href="@">
+                <i class="fa fa-tags mr-3"></i> 
+                Reviews</a>
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="fa fa-file-o mr-3"></i>
+                Wishlist</a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-file-o mr-3"></i>
+                Offers</a>
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="fa fa-comments mr-3"></i>
+                Vourchers</a>
+        </li>
+        
+
+    </ul>
+</div>
+{% endblock 'content' %}

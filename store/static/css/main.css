@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'poppins', sans-serif;
+}
+.header{
+    height: 100vh;
+    background: cyan;
+}
+.btn{
+    background: #ff523b;
+    color: #fff;
+    margin:  0;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #563434;
+}
+.title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+.title:after{
+    content: '';
+    background: #ff523b;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+.rating .fa{
+    color: #ff523b;
+}
+.brands{
+    margin: 100px auto;
+    
+}
+
+
+.brands .col-lg-2 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+.brands .col-lg-2 img:hover{
+    filter: grayscale(0);
+}
+.footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.footer p{
+    color: #8a8a8a;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.col-lg-3 .col-md-6 .col-sm-12{
+   min-width: 250px;
+   margin-bottom: 20px; 
+}
+.footer-col-1{
+    flex-basis: 30%;
+}
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+.footer-col-2 img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+.footer-col-3, .footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style-type: none; 
+}
+.app-logo{
+  margin-top: 20px;  
+}
+.app-logo img{
+    width: 140px;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+.copyright{
+    text-align: center;
+}
+/*cart items*/
+.cart-row{
+    display: flex;
+    align-items: stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #0c0c0c;
+}
+.cart-row input:focus{
+    outline: none;
+}
+.form-field{
+    width: 250px;
+    display: inline-block;
+    padding: 5px;
+}
+.hidden{
+    display: none !important;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-inner-spin-button{
+    opacity: 1;
+}
+body {
+	padding-top: 30px;
+}
+.product {
+	margin-bottom: 30px;
+}
+.product-inner {
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	padding: 10px;
+}
+.product img {
+	margin-bottom: 10px;
+}

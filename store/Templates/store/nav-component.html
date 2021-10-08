@@ -1,0 +1,31 @@
+{% load static %}
+<section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light w-100 bg-dark" style="z-index: 99;">
+        <a class="navbar-brand text-light" href="#"> Ecom</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="">Home</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link text-light" href="">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light btn-black" href="">Message</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{% url 'cart' %}">
+                <img src="{% static 'images/cart.png' %}" width="25px">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="">Account</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      
