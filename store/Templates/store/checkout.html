@@ -1,83 +1,68 @@
-
 {% extends 'store/base.html' %}
 {% load static %}
 {%block 'css'%}
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
 {% endblock %}
 {% block 'content'%}
-<h1>Shopping Cart</h1>
-
-<div class="shopping-cart">
-
-  <div class="column-labels">
-    <label class="product-image">Image</label>
-    <label class="product-details">Product</label>
-    <label class="product-price">Price</label>
-    <label class="product-quantity">Quantity</label>
-    <label class="product-removal">Remove</label>
-    <label class="product-line-price">Total</label>
-  </div>
-
-  <div class="product">
-    <div class="product-image">
-      <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
-    </div>
-    <div class="product-details">
-      <div class="product-title">Dingo Dog Bones</div>
-      <p class="product-description">The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.</p>
-    </div>
-    <div class="product-price">12.99</div>
-    <div class="product-quantity">
-      <input type="number" value="2" min="1">
-    </div>
-    <div class="product-removal">
-      <button class="remove-product">
-        Remove
-      </button>
-    </div>
-    <div class="product-line-price">25.98</div>
-  </div>
-
-  <div class="product">
-    <div class="product-image">
-      <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
-    </div>
-    <div class="product-details">
-      <div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
-      <p class="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
-    </div>
-    <div class="product-price">45.99</div>
-    <div class="product-quantity">
-      <input type="number" value="1" min="1">
-    </div>
-    <div class="product-removal">
-      <button class="remove-product">
-        Remove
-      </button>
-    </div>
-    <div class="product-line-price">45.99</div>
-  </div>
-
-  <div class="totals">
-    <div class="totals-item">
-      <label>Subtotal</label>
-      <div class="totals-value" id="cart-subtotal">71.97</div>
-    </div>
-    <div class="totals-item">
-      <label>Tax (5%)</label>
-      <div class="totals-value" id="cart-tax">3.60</div>
-    </div>
-    <div class="totals-item">
-      <label>Shipping</label>
-      <div class="totals-value" id="cart-shipping">15.00</div>
-    </div>
-    <div class="totals-item totals-item-total">
-      <label>Grand Total</label>
-      <div class="totals-value" id="cart-total">90.57</div>
-    </div>
-  </div>
+<div class="container-fluid">
+  <div class="row my-5 mx-5">
+    <div class="col-lg-6" style="margin-bottom: 250px;">
+      <div class="box-element" id="form-wrapper">
+        <form id="form">
+          <div id="user-info">
+            <div class="form-field">
+              <input type="text" required class="form-control" name="name" placeholder="Name">
+            </div>
+            <div class="form-field">
+              <input type="text" required class="form-control" name="email" placeholder="Email">
+            </div>
       
-      <button class="checkout">Checkout</button>
-
+          </div>
+          <div id="shipping-info">
+            <div class="form-field">
+              <input type="text" required class="form-control" name="address" placeholder="Address">
+            </div>
+            <div class="form-field">
+              <input type="text" required class="form-control" name="city" placeholder="City">
+            </div>
+            <div class="form-field">
+              <input type="text" required class="form-control" name="state" placeholder="State">
+            </div>
+            <div class="form-field">
+              <input type="text" required class="form-control" name="zipcode" placeholder="Zipcode">
+            </div>
+      
+          </div>
+          <hr>
+          <input type="submit" id="form-button" class="btn btn-success btn-block" value="continue">
+        </form>
+      
+      </div>
+      <hr>
+      <div class="box-element hidden"  id="payment-info">
+        <small>Payment Option </small>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="box-element">
+        <a href="{% url 'cart'%}" class="btn btn-outline-dark">&#8594; Back to cart</a>
+        <hr>
+        <h3>Order Summary</h3>
+        <hr>
+        <div class="cart-row">
+          <div style="flex: 2;"><img width="100px" src="{% static 'images/placeholder.png' %}"></div>
+          <div style="flex: 2;"><p>product 1</p></div>
+          <div style="flex: 1;"><p>50sh</p></div>
+          <div style="flex: 1;"><p>x2</p></div>
+       </div>
+       <h5>Items: 2</h5>
+       <h5>Items: 4sh</h5>
+    
+      </div>
+  </div>
 </div>
-{% endblock %}
+
+
+{% endblock 'content' %}
+
+

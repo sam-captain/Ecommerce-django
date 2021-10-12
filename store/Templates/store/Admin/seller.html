@@ -1,0 +1,65 @@
+{% extends 'store/admin/layouts/admin-base.html'%}
+{% load static %}
+{% block 'css'%}
+<link rel="stylesheet" href="{% static 'css/admin-main.css' %}">
+{% endblock 'css' %}
+{% block 'content'%}
+<div class="container">
+    <h3>Sellers {{seller_list| length}}</h3>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <h5 class="text-center">SELLERS</h5>
+                        <a href="{% url 'sellerform' %}" class="btn btn-success ml-auto">
+                            <i class="fa fa-plus mr-2"></i>
+                        Add seller
+                        </a>  
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                
+                        <thead>
+                           <tr>
+                                <th>id</th>
+                                <th>b/s name</th>
+                                <th>b/s reg no</th>
+                                <th>phone number</th>
+                                <th>External business</th>
+                                <th>created at</th>
+                                <th>updated at</th>
+                                <th>Action</th>
+                                
+                              
+                            </tr>
+                        </thead>
+                       
+                        <tbody>
+                            <tr>
+                                <td>{{seller.id}}</td>
+                                <td>{{seller.business_name}}</td>
+                                <td>{{seller.business_reg_no}}</td>
+                                <td>{{seller.phone_number}}</td>
+                                <td>{{seller.external_url}}</td>
+                                <td>{{seller.created_at}}</td>
+                                <td>{{seller.updated_at}}</td>
+                                 <td>
+                                 <a class='btn btn-danger'><i class="fa fa-trash" style="color:white;">delete</i></a>
+                                 </td>
+                            </tr>
+                       
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+                    

@@ -65,5 +65,14 @@ def Customer(request):
      }
      return render(request, 'store/admin/customers.html', context)
 
+
+def Seller(request):
+     context ={}
+     return render(request, 'store/admin/seller.html', context)
+
+def SellerForm(request):
+     context= {}
+     return render(request, 'store/admin/seller_form.html', context)
+
     
     

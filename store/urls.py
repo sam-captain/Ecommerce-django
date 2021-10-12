@@ -9,7 +9,9 @@ staff_patterns =[
     path('category/form', views.categoryForm, name="add_category"),
     path('store/category', views.storeCategory, name="store_category"),
     path('delete/category/<id>', views.deleteCategory, name="delete_category"),
-    path('customers', views.Customer, name="customers" )
+    path('customers', views.Customer, name="customers" ),
+    path('seller', views.Seller, name="sellers"),
+    path('seller/form', views.SellerForm, name="sellerform"),
     
 ]
 
