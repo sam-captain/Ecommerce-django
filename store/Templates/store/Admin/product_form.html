@@ -1,6 +1,9 @@
-{% extends 'blog/admin/layouts/admin-base.html'%}
+{% extends 'store/admin/layouts/admin-base.html'%}
 {% load widget_tweaks %}
 {% load static %}
+{% block 'css'%}
+<link rel="stylesheet" href="{% static 'css/admin-main.css'%}">
+{% endblock 'css' %}
 {% block 'content'%}
 <div class="container">     
     <div class="row">
@@ -8,27 +11,33 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <h5>Add new post</h5>  
+                        <h5>Add new product</h5>  
                     </div>
                 </div>
                 <div class="card-body">
-                  <form method="POST" enctype="multipart/form-data">
+                  <form method="POST" action="{% url 'store_product' %}">
                     {% csrf_token %}
 
-                    {% for hidden in form.hidden_fields %}
+                    {% for hidden in ProductForm.hidden_fields %}
 
                     {{ hidden }}
+
                     {% endfor %}
 
-                    {% for field in form.visible_fields %}
-                    <div class="form-group">
-                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                        {{ field|add_class:'form-control' }}
-                        {% for error in field.errors %}
-                        <span class="help-block">{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                    {% endfor %}    
+                    {% for field in ProductForm.visible_fields %}
+
+                        <div class="form-group">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+
+                            {{ field|add_class:'form-control ' }}
+                            
+                            {% for error in field.errors %}
+                                <span class="help-block">{{ error }}</span>
+                            {% endfor %}
+
+                        </div>
+
+                    {% endfor %}
                     <button type="submit" class="btn btn-dark w-50 mt-5">
                         Submit
                      </button>

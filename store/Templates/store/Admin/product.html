@@ -1,5 +1,8 @@
+{% extends 'store/admin/layouts/admin-base.html' %}
 {% load static %}
-
+{% block 'css' %}
+<link rel="stylesheet" href="{% static 'css/admin-main.css' %}">
+{% endblock 'css' %}
 {% block 'content'%}
 <div class="container">
     <h3>Product {{ product_list|length }}</h3>
@@ -32,12 +35,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for product in object_list %}
+                            {% for product in product_list %}
                             <tr>
                                 <td>{{product.id}}</td>
                                 <td>{{product.name}}</td>
-                                <td>{{product.Category}}</td>
-                                <td>{{product.image}}
+                                <td>{{product.category}}</td>
+                                <td>{{product.image.url}}
                                </td>
                                 <td>{{product.price}}</td>
                                 <td>{{product.inventory}}</td>
@@ -46,7 +49,7 @@
                                 <td>{{product.created_at}}</td>
                                 <td>{{product.updated_at}}</td>
                                 <td>
-                                    <a href="{% url 'view_product' product.id %}" class="btn btn-outline-info btn-sm">
+                                    <a href="" class="btn btn-outline-info btn-sm">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                 </td>

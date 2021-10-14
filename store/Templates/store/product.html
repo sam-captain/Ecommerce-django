@@ -5,40 +5,22 @@
 {% endblock 'css' %}
 {% block 'content' %}
 <div class="container">
+	<h1 class="text-center text-info">{{header}}</h1>
 <div class="row m-5">
+	{% for product in products %}
 	<div class="col-lg-4">
-		<img class="thumbnail" src="{% static 'images/placeholder.png' %}">
+		<img class="thumbnail" src="{{product.image.url}}">
 		<div class="box-element product">
-			<h6><strong>product</strong></h6>
+			<h6><strong>{{ product.name }}</strong></h6>
 			<hr>
 			<button class="btn btn-outline-secondary add-btn ">Add to cart</button>
 			<a href="#" class="btn btn-outline-success">View</a>
-			<h4 style="display: inline-block; float: right;"><strong>20sh</strong></h4>
+			<h4 style="display: inline-block; float: right;"><strong>{{product.price}}</strong></h4>
 
 		</div>
 	</div>
-	<div class="col-lg-4">
-		<img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-		<div class="box-element product">
-			<h6><strong>product</strong></h6>
-			<hr>
-			<button class="btn btn-outline-secondary add-btn ">Add to cart</button>
-			<a href="#" class="btn btn-outline-success">View</a>
-			<h4 style="display: inline-block; float: right;"><strong>20sh</strong></h4>
 
-		</div>
-	</div>
-	<div class="col-lg-4 col-md-6 col-sm-12">
-		<img class="thumbnail" src="{% static 'images/placeholder.png' %}" >
-		<div class="box-element product">
-			<h6><strong>product</strong></h6>
-			<hr>
-			<button class="btn btn-outline-secondary add-btn ">Add to cart</button>
-			<a href="#" class="btn btn-outline-success">View</a>
-			<h4 style="display: inline-block; float: right;"><strong>20sh</strong></h4>
-
-		</div>
-	</div>
+	{% endfor %}
 </div>
 </div>
 

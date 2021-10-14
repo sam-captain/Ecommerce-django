@@ -15,9 +15,29 @@
                     </div>
                 </div>
                 <div class="card-body">
-                  <form method="POST" enctype="multipart/form-data">
+                    <form action="{% url 'store_seller'%}" method="POST">
                     {% csrf_token %}
-                    {{ form.as_p }}    
+
+                    {% for hidden in SellerForm.hidden_fields %}
+
+                    {{ hidden }}
+
+                    {% endfor %}
+
+                    {% for field in SellerForm.visible_fields %}
+
+                        <div class="form-group">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+
+                            {{ field|add_class:'form-control ' }}
+                            
+                            {% for error in field.errors %}
+                                <span class="help-block">{{ error }}</span>
+                            {% endfor %}
+
+                        </div>
+
+                    {% endfor %}  
                     <button type="submit" class="btn btn-dark w-50 mt-5">
                         Submit
                      </button>

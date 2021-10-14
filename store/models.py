@@ -25,6 +25,9 @@ class Seller(User):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at =models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = "Seller"
+
     def __str__(self):
         return self.business_name
 
@@ -34,13 +37,16 @@ class Customer(User):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at =models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = "Customer"
+
     def __str__(self):
         return self.name
 
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-    category =models.ForeignKey('Category',on_delete=models.CASCADE,blank=False, null=False)
+    category =models.ForeignKey('Category', on_delete=models.CASCADE,blank=False, null=False)
     image =models.ImageField(max_length=255) 
     price = models.IntegerField(blank=False, null=False)
     inventory =models.IntegerField(null=False, blank=False)

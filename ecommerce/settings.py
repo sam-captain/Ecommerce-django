@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',   
     'store.apps.StoreConfig',
-    'widget_tweaks'
+    'widget_tweaks',
+    
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_DIRS =[
     os.path.join(BASE_DIR, 'store/static')
             ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT =os.path.join(BASE_DIR, 'media')
+
 
 
 # Default primary key field type

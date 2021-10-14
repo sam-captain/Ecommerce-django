@@ -12,7 +12,7 @@
                 <div class="card-header">
                     <div class="row">
                         <h5 class="text-center">SELLERS</h5>
-                        <a href="{% url 'sellerform' %}" class="btn btn-success ml-auto">
+                        <a href="{% url 'add_seller' %}" class="btn btn-success ml-auto">
                             <i class="fa fa-plus mr-2"></i>
                         Add seller
                         </a>  
@@ -37,18 +37,20 @@
                         </thead>
                        
                         <tbody>
-                            <tr>
-                                <td>{{seller.id}}</td>
-                                <td>{{seller.business_name}}</td>
-                                <td>{{seller.business_reg_no}}</td>
-                                <td>{{seller.phone_number}}</td>
-                                <td>{{seller.external_url}}</td>
-                                <td>{{seller.created_at}}</td>
-                                <td>{{seller.updated_at}}</td>
-                                 <td>
-                                 <a class='btn btn-danger'><i class="fa fa-trash" style="color:white;">delete</i></a>
-                                 </td>
-                            </tr>
+                            {% for seller in seller_list %}
+                                <tr>
+                                    <td>{{seller.id}}</td>
+                                    <td>{{seller.business_name}}</td>
+                                    <td>{{seller.business_reg_no}}</td>
+                                    <td>{{seller.phone_number}}</td>
+                                    <td>{{seller.external_url}}</td>
+                                    <td>{{seller.created_at}}</td>
+                                    <td>{{seller.updated_at}}</td>
+                                    <td>
+                                    <a class='btn btn-danger'><i class="fa fa-trash" style="color:white;">delete</i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
                        
                         </tbody>
                     </table>
